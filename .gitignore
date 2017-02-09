@@ -1,0 +1,5 @@
+*.pyc
+dot.jupyter/passwd
+keys/jupyter.pem
+keys/jupyter.key
+.idea
