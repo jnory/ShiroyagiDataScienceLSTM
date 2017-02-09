@@ -5,9 +5,9 @@ ENV CUDA_HOME /usr/local/cuda
 
 RUN apt-get update && apt-get install -y wget git \
     && cd /tmp \
-    && wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh \
-    && chmod 755 ./Anaconda3-4.3.0-Linux-x86_64.sh \
-    && ./Anaconda3-4.3.0-Linux-x86_64.sh -b -p /opt/anaconda \
+    && wget https://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh \
+    && chmod 755 ./Anaconda3-4.1.1-Linux-x86_64.sh \
+    && ./Anaconda3-4.1.1-Linux-x86_64.sh -b -p /opt/anaconda \
     && /opt/anaconda/bin/pip install keras \
     && mkdir /root/.keras \
     && mkdir /etc/cert \

@@ -7,6 +7,7 @@ options = [
     "-p 4433:4433",
     "-v {}/notebooks:/jupyter".format(basedir),
     "-v {}/dot.jupyter:/root/.jupyter".format(basedir),
+    "-v {}/jupyter:/root/.local/share/jupyter".format(basedir),
 ]
 
 key = os.path.exists(os.path.join(basedir, "keys/jupyter.key"))
