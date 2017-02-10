@@ -1,5 +1,7 @@
 *.pyc
-dot.jupyter/passwd
-keys/jupyter.pem
-keys/jupyter.key
+config/dot.jupyter/passwd
+config/keys/*
 .idea
+README.md
+config/jupyter/*
+!.gitkeep

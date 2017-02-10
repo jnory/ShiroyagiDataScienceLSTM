@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y wget git \
     && mkdir /etc/cert \
     && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -sha256 -keyout /etc/cert/jupyter.key -out /etc/cert/jupyter.pem -batch
 
-ADD keras.json /root/.keras/keras.json
-ADD dot.theanorc /root/.theanorc
+ADD config/keras.json /root/.keras/keras.json
+ADD config/dot.theanorc /root/.theanorc
 
 ENV PATH $PATH:/opt/anaconda/bin
