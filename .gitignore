@@ -4,3 +4,6 @@ config/keys/*
 .idea
 config/jupyter/*
 !.gitkeep
+notebooks/try
+.DS_Store
+.ipynb_checkpoints
