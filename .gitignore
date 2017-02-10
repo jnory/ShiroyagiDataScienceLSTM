@@ -2,6 +2,5 @@
 config/dot.jupyter/passwd
 config/keys/*
 .idea
-README.md
 config/jupyter/*
 !.gitkeep
