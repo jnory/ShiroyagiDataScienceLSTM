@@ -7,3 +7,4 @@ config/jupyter/*
 notebooks/try
 .DS_Store
 .ipynb_checkpoints
+*.bz2
