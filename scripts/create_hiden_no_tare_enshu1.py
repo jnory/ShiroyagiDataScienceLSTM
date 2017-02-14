@@ -2,9 +2,14 @@ import os
 
 import numpy as np
 import pandas as pd
+
+np.random.seed(151)  # noqa
+
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
-from keras.layers import LSTM, TimeDistributed, Dense
+from keras.layers import LSTM, TimeDistributed, Dense, Dropout
+from keras.callbacks import ModelCheckpoint
+import json
 
 
 def load():
@@ -34,22 +39,28 @@ def convert_to_keras_format(train_f):
 def fit(train_X, train_Y):
     model = Sequential()
     model.add(LSTM(input_dim=1, output_dim=10, return_sequences=True))
-    model.add(TimeDistributed(Dense(1)))
+    model.add(Dropout(0.5))
+    model.add(TimeDistributed(Dense(1, activation="tanh")))
     model.compile(loss="mean_squared_error", optimizer="adam")
 
-    model.fit(train_X, train_Y, nb_epoch=100000, verbose=2)
-    return model
+    base = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(base, "../notebooks/data/hiden_no_tare_enshu1")
+
+    callback = ModelCheckpoint(
+        filepath=path + ".h5", verbose=1, save_best_only=True)
+
+    history = model.fit(
+        train_X, train_Y, nb_epoch=10000, verbose=2,
+        validation_split=0.1, callbacks=[callback])
+    with open(path + ".json", "w") as fp:
+        fp.write(json.dumps(history.history))
 
 
 def main():
     train = load()
     train_f = scale(train)
     train_X, train_Y = convert_to_keras_format(train_f)
-    model = fit(train_X, train_Y)
-    base = os.path.dirname(os.path.abspath(__file__))
-    model.save(
-        os.path.join(base, "../notebooks/data/hiden_no_tare_enshu1.h5"))
-
+    fit(train_X, train_Y)
 
 if __name__ == '__main__':
     main()

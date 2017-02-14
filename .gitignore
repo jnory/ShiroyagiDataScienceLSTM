@@ -3,6 +3,7 @@ config/dot.jupyter/passwd
 config/keys/*
 .idea
 config/jupyter/*
+config/dot.theano/*
 !.gitkeep
 notebooks/try
 .DS_Store
