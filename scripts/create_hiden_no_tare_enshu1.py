@@ -37,7 +37,7 @@ def fit(train_X, train_Y):
     model.add(TimeDistributed(Dense(1)))
     model.compile(loss="mean_squared_error", optimizer="adam")
 
-    model.fit(train_X, train_Y, nb_epoch=10000, verbose=2)
+    model.fit(train_X, train_Y, nb_epoch=100000, verbose=2)
     return model
 
 

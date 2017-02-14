@@ -8,3 +8,4 @@ notebooks/try
 .DS_Store
 .ipynb_checkpoints
 *.bz2
+notebooks/LSTM-enshu1-answer.ipynb
