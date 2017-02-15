@@ -1,6 +1,10 @@
 [global]
 floatX = float32
 device = gpu0
+mode = FAST_RUN
+
+[nvcc]
+fastmath = True
 
 [lib]
 cnmem = 1
