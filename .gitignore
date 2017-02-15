@@ -10,3 +10,4 @@ notebooks/try
 .ipynb_checkpoints
 *.bz2
 notebooks/LSTM-enshu1-answer.ipynb
+notebooks/LSTM-enshu2-answer.ipynb

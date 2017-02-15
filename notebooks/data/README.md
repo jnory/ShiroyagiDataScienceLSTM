@@ -11,19 +11,3 @@
 ### hiden_no_tare_enshu1.{h5,json,logs.gz}
 `../../scripts/create_hiden_no_tare_enshu1.py` を実行して得られた
 10,000反復中の最高性能モデルとその学習ログです。
-
-## 演習2 官公庁Q&Aコーパス
-
-このデータはオープンデータとされているQ&Aを手動でかき集めてコーパス化したものです。
-
-### QA.csv.gz
-元データ
-
-左から順に、出展URL, 収集日, タイトル, 質問, 回答 の順に並んでいます。
-1行目はタイトルです。
-
-全てのデータはCreative Commons Byの元に配布されているものです。
-
-###  QA.normalized.csv.gz
-データを綺麗にして、形態素解析したもの。
-手順は、 `../preprocess_enshu2.ipynb` に記載しています。
