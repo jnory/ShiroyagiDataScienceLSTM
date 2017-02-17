@@ -113,7 +113,7 @@ def fit(train_x, train_y, train, wdic, wdic_inv):
         nb_epoch=10000, verbose=0, callbacks=[chk, lmd], validation_split=0.1)
     model.save(path + ".final.h5")
     logs.append(history.history)
-    with open(path + ".json") as fp:
+    with open(path + ".json", "w") as fp:
         fp.write(json.dumps(logs))
 
 
