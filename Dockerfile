@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y wget git \
     && mkdir /etc/cert \
     && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -sha256 -keyout /etc/cert/jupyter.key -out /etc/cert/jupyter.pem -batch
 RUN /opt/anaconda/bin/pip install tensorflow-gpu
+RUN apt-get install -y language-pack-ja
+RUN update-locale LANG=ja_JP.UTF-8
 
 ADD config/keras.json /root/.keras/keras.json
 ADD config/dot.theanorc /root/.theanorc

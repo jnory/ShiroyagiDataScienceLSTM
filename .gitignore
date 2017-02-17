@@ -9,5 +9,5 @@ notebooks/try
 .DS_Store
 .ipynb_checkpoints
 *.bz2
-notebooks/LSTM-enshu1-answer.ipynb
-notebooks/LSTM-enshu2-answer.ipynb
+notebooks/*-answer.ipynb
+notebooks/data/hiden_no_tare_enshu3.back.h5
